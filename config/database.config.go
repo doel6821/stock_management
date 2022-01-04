@@ -10,7 +10,7 @@ import (
 	
 )
 
-//SetupDatabaseConnection is creating a new connection to our database
+//SetupDatabaseConnection is creating a new connection to our database postgres
 func SetupDatabaseConnection() *gorm.DB {
 	errEnv := godotenv.Load()
 	if errEnv != nil {
