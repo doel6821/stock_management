@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/joho/godotenv"
+	// "github.com/joho/godotenv"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	
@@ -12,10 +12,10 @@ import (
 
 //SetupDatabaseConnection is creating a new connection to our database postgres
 func SetupDatabaseConnection() *gorm.DB {
-	errEnv := godotenv.Load()
-	if errEnv != nil {
-		panic("Failed to load env file. Make sure .env file is exists!")
-	}
+	// errEnv := godotenv.Load()
+	// if errEnv != nil {
+	// 	panic("Failed to load env file. Make sure .env file is exists!")
+	// }
 
 	dbUser := os.Getenv("DB_USER")
 	dbPass := os.Getenv("DB_PASSWORD")
