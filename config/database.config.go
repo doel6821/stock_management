@@ -3,11 +3,11 @@ package config
 import (
 	"fmt"
 	"os"
+	"stock_management/entity"
 
 	// "github.com/joho/godotenv"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
-	
 )
 
 //SetupDatabaseConnection is creating a new connection to our database postgres
@@ -28,6 +28,8 @@ func SetupDatabaseConnection() *gorm.DB {
 	if err != nil {
 		panic("Failed to create a connection to database")
 	}
+
+	db.AutoMigrate(&entity.User{}, &entity.Product{}, &entity.Cart{}, &entity.History{}, &entity.Purchase{})
 	db.LogMode(true)
 	println("Database connected !")
 	return db
