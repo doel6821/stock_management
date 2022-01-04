@@ -56,7 +56,7 @@ func main() {
 	docs.SwaggerInfo.Description = "Simple Ecommerce Stock Management"
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Schemes = []string{"http", "https"}
-	docs.SwaggerInfo.Host = "localhost:8080"
+	docs.SwaggerInfo.Host = "https://stockmain.herokuapp.com/"
 
 	authRoutes := server.Group("api/auth")
 	{
