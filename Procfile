@@ -1,0 +1,1 @@
+web: stock_management
