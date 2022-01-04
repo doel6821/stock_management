@@ -55,7 +55,7 @@ func (c *userService) CreateUser(registerRequest dto.RegisterRequest) (*_user.Us
 		return nil, errors.New("user already exists")
 	}
 
-	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+	if err != nil && errors.Is(err, gorm.ErrRecordNotFound) {
 		return nil, err
 	}
 
